@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+
+# Data
+data/
+
+# Models and artifacts
+models/
+artifacts/
