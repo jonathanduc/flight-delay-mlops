@@ -14,15 +14,34 @@ The project is designed as a decision-support prototype for airport operations r
 
 The project uses historical flight data from the **US Bureau of Transportation Statistics (BTS) Reporting Carrier On-Time Performance dataset**.
 
+The initial data sample is **May 2026**, chosen as a complete recent month for understanding the schema, data quality, and target behavior before expanding to a longer historical period.
+
+Raw BTS files are stored under `data/raw/` and are intentionally excluded from Git. Data acquisition is currently manual from the official BTS TranStats source; provenance and acquisition details are documented so the process can be reproduced and automated later if needed.
+
 Only information available at the prediction timestamp will be used as model input in order to preserve point-in-time correctness and prevent data leakage.
+
+Initial inspection of May 2026 shows that cancellation handling requires an explicit population/label decision: some cancelled flights have a recorded departure delay, while others have missing `DepDelay` and `DepDel15` values. This observation is treated as a data-quality and target-definition issue rather than silently resolved during preprocessing.
 
 ## Project status
 
 🚧 **Work in progress**
 
-Current phase: **problem framing and project design**.
+Current phase: **Python project setup and data foundations**.
 
 The project is being developed incrementally, following production ML principles and the Made With ML learning path.
+
+## Development setup
+
+This project uses Python 3.10.11 and `uv` for Python environment and dependency management.
+
+After cloning the repository, synchronize the project environment:
+
+```bash
+uv sync
+source .venv/bin/activate
+```
+
+The project dependencies are declared in `pyproject.toml` and locked in `uv.lock` for reproducible environments.
 
 ## Documentation
 
