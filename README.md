@@ -20,9 +20,22 @@ Only information available at the prediction timestamp will be used as model inp
 
 🚧 **Work in progress**
 
-Current phase: **problem framing and project design**.
+Current phase: **Python project setup and data foundations**.
 
 The project is being developed incrementally, following production ML principles and the Made With ML learning path.
+
+## Development setup
+
+This project uses Python 3.10.11 and `uv` for Python environment and dependency management.
+
+After cloning the repository, synchronize the project environment:
+
+```bash
+uv sync
+source .venv/bin/activate
+```
+
+The project dependencies are declared in `pyproject.toml` and locked in `uv.lock` for reproducible environments.
 
 ## Documentation
 
